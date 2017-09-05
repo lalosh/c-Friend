@@ -13,6 +13,9 @@ public:
     ~engineer(){
 
     }
+    engineer(int m){
+        mark = m;
+    }
     engineer(float array[],int size){
         mark = 0;
         for(int i = 0; i < size; i++){
@@ -28,12 +31,18 @@ public:
         t.mark = mark - outside.getMark();
         return t;
     }
+
     engineer operator+(engineer outside){
         engineer t;
         t.mark = mark + outside.getMark();
         return t;
     }
-
+    engineer operator++(int){
+        return engineer(++mark);
+    }
+    engineer operator--(int){
+        return engineer(--mark);
+    }
 };
 
 int counter(engineer e){
@@ -56,5 +65,10 @@ int main(){
     cout << e.getMark() << endl;
     cout << m.getMark() << endl;   
     cout << t.getMark() << endl;
+
+    t--;
+    cout << t.getMark() << endl;
+    
+
     
 }
