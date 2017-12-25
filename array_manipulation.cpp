@@ -38,7 +38,7 @@ bool is_prime(int x){
     return true;
 }
 
-void to_int_array(string string_array[][5],int integer_array[][5], int length){
+void string_to_int_array(string string_array[][5],int integer_array[][5], int length){
 
     int temp_integer = 0;
 
@@ -112,7 +112,7 @@ int main()
     //string to int
     int integer_array[5][5];
 
-    to_int_array(string_array, integer_array, 5);
+    string_to_int_array(string_array, integer_array, 5);
 
     cout << "integer array:" << endl;
     print_2d_array(integer_array,5);
